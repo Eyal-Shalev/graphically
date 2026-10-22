@@ -1,0 +1,11 @@
+@mixin scalable-maximum($multiplier: 1) {
+  @include grid-breakpoint(tablet) {
+    @include padding-after(span($multiplier * 1));
+  }
+  @include grid-breakpoint(desktop) {
+    @include padding-after(span($multiplier * 2));
+  }
+  @include grid-breakpoint(wide) {
+    @include padding-after(span($multiplier * 3));
+  }
+}

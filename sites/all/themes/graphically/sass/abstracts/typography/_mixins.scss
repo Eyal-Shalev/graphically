@@ -1,0 +1,95 @@
+/* MIXINS */
+
+/**
+ * A helpful mixin to quickly apply font properties.
+ */
+@mixin font($family: false, $size: false, $weight: false, $lines: false, $line-height: false, $style: false) {
+  @if $family {
+    font-family: append($family, font-get-fallback($family), comma);
+    @each $key, $value in font-get-css($family) {
+      #{$key}: $value;
+    }
+  }
+
+  @if $size and unit(font-get-size($size)) == em {
+    font-size: font-get-size($size);
+  } @else if $size {
+    $size: font-scale-size($size);
+    @include adjust-font-size-to($size);
+  }
+
+  @if $lines {
+    @include adjust-leading-to($lines);
+  }
+
+  @if $line-height {
+    line-height: $line-height;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $style {
+    font-style: $style;
+  }
+}
+
+/**
+ * Creates a new font face to use in the CSS.
+ */
+@mixin set-font-face($name, $weight: false, $style: false, $directory: $fonts-dir, $file-name: $name) {
+  $src: ();
+  $eot: false;
+  @each $format, $suffix in $font-types {
+    @if ($format == svg) {
+      $suffix: '#{$suffix}##{$name}';
+    }
+    $font-url: url('/sites/all/themes/graphically/fonts/#{$file-name}.#{$suffix}');
+    $src: append($src, ($font-url format('#{$format}')), comma);
+  }
+  @font-face {
+    font-family: $name;
+    src: $src;
+    $weight: if($weight == normal, false, $weight);
+    $style: if($style == normal, false, $style);
+    @include font($weight: $weight, $style: $style);
+  }
+}
+
+/**
+ * Runs the block for each font in the font map.
+ */
+@mixin each-font {
+  @each $tmp-font-name, $tmp-font-data in $fonts {
+    @include with-font($tmp-font-name, $tmp-font-data) {
+      @content;
+    }
+  }
+}
+
+/**
+ * Overrides the current font values inside the block.
+ */
+@mixin with-font($tmp-font-name, $tmp-font-data: map-get($fonts, $tmp-font-name)) {
+  // Setting defaults.
+  $previous-font-name: $current-font-name;
+  $previous-font-data: $current-font-data;
+  $previous-font-css: $current-font-css;
+  $previous-font-weights: $current-font-weights;
+  $previous-font-styles: $current-font-styles;
+  $previous-font-fallback: $current-font-fallback;
+  // Overriding defaults.
+  $current-font-name: $tmp-font-name !global;
+  $current-font-data: map-merge($font-default, $tmp-font-data) !global;
+  $current-font-css: map-get($current-font-data, css) !global;
+  $current-font-weights: map-get($current-font-data, weights) !global;
+  $current-font-styles: map-get($current-font-data, styles) !global;
+  $current-font-fallback: map-get($current-font-data, fallback) !global;
+  @content;
+  // Reverting to defaults.
+  $current-font-name: $previous-font-name !global;
+  $current-font-data: $previous-font-data !global;
+  $current-font-css: $previous-font-css !global;
+  $current-font-weights: $previous-font-weights !global;
+  $current-font-styles: $previous-font-styles !global;
+  $current-font-fallback: $previous-font-fallback !global;
+}

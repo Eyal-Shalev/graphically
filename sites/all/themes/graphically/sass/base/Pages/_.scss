@@ -1,0 +1,14 @@
+html {
+  @include font(BasicGothicWeb);
+  @include bg-color(background);
+}
+
+body {
+  margin: 0;
+}
+
+#content, #sidebar {
+  overflow: auto;
+  box-sizing: border-box;
+  @include bg-color(background);
+}

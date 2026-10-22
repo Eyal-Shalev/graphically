@@ -1,0 +1,23 @@
+/* Links */
+@include grid-placeholder(link-like) {
+  text-decoration: none;
+  color: inherit;
+  &:hover:not(.active):not(.active-trail) {
+    @include color(link-hover);
+    &[target="_blank"] {
+      @include color(external-link-hover);
+    }
+  }
+}
+
+@include grid-placeholder(arrow-before) {
+  &:before {
+    content: '»';
+    @include font($weight: bold);
+    @include padding-after(1px);
+  }
+}
+
+a {
+  @include extend(link-like);
+}

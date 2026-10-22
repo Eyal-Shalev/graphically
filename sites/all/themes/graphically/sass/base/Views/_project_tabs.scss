@@ -1,0 +1,108 @@
+/* Tabs */
+
+.field-name-field-pr-tabs-view {
+  @include font(BasicGothicScWeb);
+  .tab-arrows {
+    span {
+      cursor: default;
+    }
+    .tab-arrow {
+      @include color(tab-arrow);
+      @include font($weight: bold);
+      &.previous {
+        float: direction();
+      }
+      &.next {
+        float: opdirection();
+      }
+      &:not(.disabled):hover {
+        @include color(tab-hover);
+      }
+    }
+  }
+  .views-row {
+    @include color(tab-text);
+    .tab-id {
+      display: inline-block;
+    }
+    .name {
+      @include font($weight: lighter);
+      &:before {
+        content: '|';
+        padding: 0 0.4em
+      }
+    }
+    a {
+      @include transition(width 1s ease-out);
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+    }
+    .views-field-delta {
+      display: inline-block;
+    }
+    .nav {
+      display: inline-block;
+      position: relative;
+      .nav-button {
+        @include color(nav-button);
+        display: inline-block;
+        text-align: center;
+        &:hover:not(.nav-pointer), &.active {
+          @include color(nav-button-hover);
+        }
+      }
+      .nav-pointer {
+        @include pos(absolute, 0, 0);
+        text-align: center;
+        @include color(nav-pointer);
+      }
+    }
+    &.active, &:hover {
+      .tab-id {
+        @include font($weight: bold);
+      }
+    }
+    &.active {
+      @include color(tab-active);
+      cursor: default;
+      width: auto;
+    }
+    &:hover:not(.active) {
+      @include color(tab-hover);
+    }
+  }
+
+  @include grid-breakpoint(mobile) {
+    display: none;
+  }
+
+  @include each-grid($exclude: (mobile)) {
+    @include anti-span(6 wide);
+    .tab-arrows {
+      @include span(first 1);
+      .tab-arrow {
+        @include font($lines: 2);
+      }
+    }
+    .views-row {
+      @include pre(gutter(1) / 2);
+      @include post(gutter(1));
+      display: inline-block;
+      &.active {
+        @include post(0);
+      }
+      @include font($lines: 2);
+      .name {
+        @include font($size: small, $lines: 2);
+      }
+      .nav .nav-button {
+        width: calc(#{font-scale-size(small)} * 1.5);
+      }
+    }
+  }
+
+  @include grid-breakpoint(wide) {
+    @include anti-span(5 wide);
+  }
+}

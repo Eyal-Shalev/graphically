@@ -1,0 +1,107 @@
+/* MAIN */
+/* Abstructs */
+@import "abstracts/**/_.scss";
+/* COMPONENTS */
+@import "components/*";
+/* BASES */
+@import "base/**/*";
+
+@mixin template {
+  // HEADER
+  #header {
+    @include margin-leader(2);
+    @include container(100%);
+    ul.tabs {
+      @include anti-span(6 wide);
+      > li {
+        @include font($lines: 1);
+        float: direction();
+        @include gutter;
+        @include padding-leader(.5);
+        @include padding-trailer(.5);
+      }
+    }
+  }
+  // CONTENT
+  #main {
+    @include container(100%);
+    @include margin-leader(2);
+  }
+  #sidebar {
+    @include span(first 5);
+    @include push(1);
+    @include box-shadow(none);
+    position: static;
+  }
+  .columns-break {
+    @include xb(column-width, 25vw);
+    @include xb(column-gap, gutter(1));
+  }
+  #content {
+    @include anti-span(6 wide);
+    @include margin-after(0);
+  }
+  #footer {
+    @include font($lines: 1);
+  }
+
+  #content, #sidebar {
+    height: calc(99vh - #{rhythm(7)});
+  }
+}
+
+@include grid-breakpoint(mobile) {
+  // HEADER
+  #header {
+    @include container(100%);
+    .region-header {
+      @include push(1 of 14);
+      @include span(12 of 14);
+    }
+  }
+  // CONTENT
+  #main {
+    @include container(100%);
+  }
+  #sidebar {
+    display: none;
+  }
+  #content {
+    @include push(1 of 14);
+    @include span(12 of 14);
+  }
+  #footer {
+    @include font($lines: 1);
+  }
+}
+
+@include grid-breakpoint(tablet) {
+  @include template;
+  #sidebar {
+    position: static;
+  }
+}
+
+@include grid-breakpoint(desktop) {
+  @include template;
+}
+
+@include grid-breakpoint(wide) {
+  @include template;
+  #header {
+    ul.tabs {
+      @include anti-span(5 wide);
+    }
+  }
+  #sidebar {
+    @include span(first 4);
+  }
+  .columns-break {
+    @include xb(column-width, 20vw);
+    @include xb(column-gap, gutter(1));
+  }
+
+  #content {
+    @include anti-span(5 wide);
+  }
+}

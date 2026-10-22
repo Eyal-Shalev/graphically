@@ -1,0 +1,203 @@
+/* FORMS */
+/* General Forms*/
+form {
+  .form-required {
+    @include color(required);
+  }
+
+  .form-text,
+  .form-textarea {
+    background-color: transparent;
+    @include color(text-input);
+    border: none;
+    max-width: 100%;
+  }
+  .form-text {
+    border-bottom: 1px solid color(border, 0.2);
+  }
+
+  fieldset,
+  .horizontal-tabs-list > li {
+    border-color: color(border);
+  }
+  .filter-wrapper {
+    border: 0 none transparent;
+    padding: 0;
+    .filter-help {
+      padding: 0;
+      @include span(last 2 of 3 fluid);
+      text-align: opdirection();
+    }
+    .filter-help + .form-type-select {
+      padding: 0;
+      @include span(1 of 3 fluid);
+    }
+    .filter-guidelines {
+      padding: 0;
+      @include span(100%);
+      .tips {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  a.button,
+  .form-actions .form-submit {
+    background: transparent;
+    border: none;
+    padding: 0;
+    outline: none;
+    @include color(submit, 1, 10);
+    &:active {
+      text-decoration: underline;
+    }
+    &.remove,
+    &#edit-delete {
+      @include color(delete);
+      @include font($weight: lighter);
+    }
+  }
+
+  // PER GRID
+  @include each-grid {
+    .form-item .description {
+      @include font(BasicGothicScWeb, $size: small)
+    }
+    .form-type-textarea .link-edit-summary {
+      @include font($size: small);
+    }
+    .form-type-textfield {
+      @include clearfix;
+      label,
+      .form-textarea {
+        float: direction();
+      }
+    }
+    .form-text,
+    .form-textarea {
+      @include font($size: base, $lines: 1);
+    }
+    .form-textarea {
+      background-image: repeating-linear-gradient(to bottom, transparent, transparent rhythm(0.9), color(border, 0.2) rhythm(0.1), color(border, 0.2) rhythm(1));
+    }
+    .form-actions {
+      .form-submit {
+        @include grid-extend(link-like);
+        @include font(BasicGothicScWeb, $size: base, $lines: 1);
+        cursor: pointer;
+        &#edit-delete {
+          @include font($size: small);
+        }
+      }
+    }
+  }
+}
+
+/* Node Forms*/
+#block-system-main .node-form {
+  // GLOBAL
+  position: relative;
+
+  .form-actions {
+    position: fixed;
+    z-index: 10;
+    @include bg-color(background, 0.9);
+  }
+  .horizontal-tabs {
+    float: direction();
+    position: relative;
+    border: none;
+    ul.horizontal-tabs-list {
+      z-index: 10;
+      background: transparent;
+      position: fixed;
+      border: none;
+      li.horizontal-tab-button {
+        @include bg-color(background, 0.9);
+        float: direction();
+        border: 0;
+        a, a:hover, a.selected {
+          background-color: transparent;
+          overflow: hidden;
+          outline: none;
+          .summary {
+            white-space: nowrap;
+            text-overflow: ellipsis-word;
+          }
+        }
+        &:hover, &.selected {
+          @include bg-color(white, 0.9);
+        }
+      }
+    }
+    .horizontal-tabs-panes .horizontal-tabs-pane {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .form-actions .form-submit &#edit-delete {
+    float: opdirection();
+  }
+
+  // PER GRID
+  @include each-grid {
+    @include padding-leader(1);
+    .horizontal-tabs {
+      @include anti-span(6 wide, 99vw);
+      ul.horizontal-tabs-list {
+        top: rhythm(5.85);
+        width: anti-span(6 wide, 99vw);
+        li.horizontal-tab-button {
+          a, a:hover, a.selected, a:focus {
+            padding: rhythm(0.2) gutter(0.5);
+            height: rythm(2);
+            outline: none;
+            @include font($size: base, $lines: 1);
+            .summary {
+              @include invisible {
+                @include focusable;
+              }
+            }
+          }
+        }
+      }
+      .horizontal-tabs-panes {
+        @include padding-leader(2);
+      }
+    }
+    .form-actions {
+      @include anti-span(6 wide, 99vw);
+      top: rhythm(4.9);
+      .form-submit {
+        @include gutter;
+        &#edit-delete {
+          float: opdirection();
+        }
+      }
+    }
+  }
+  @include grid-breakpoint(wide) {
+    .horizontal-tabs {
+      @include anti-span(5 wide, 99vw);
+      ul.horizontal-tabs-list {
+        width: anti-span(5 wide, 99vw);
+      }
+    }
+    .form-actions {
+      @include anti-span(5 wide, 99vw);
+    }
+  }
+}
+
+#node-delete-confirm {
+  .form-actions .form-submit {
+    @include color(delete);
+  }
+  @include each-grid {
+    #node-delete-confirm .form-actions {
+      .form-submit {
+        @include gutter;
+      }
+    }
+  }
+}

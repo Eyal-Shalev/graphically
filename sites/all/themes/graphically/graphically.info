@@ -1,0 +1,62 @@
+name = Graphically
+description = Graphically Theme
+screenshot = images/screenshot.png
+core = "7.x"
+project = "graphically"
+
+; SCRIPTS
+scripts[] = js/scroller.js
+scripts[] = js/graphically.js
+
+; CSS
+
+stylesheets[all][] = css/main.css
+stylesheets[all][] = system.menus.css
+stylesheets[all][] = system.messages.css
+stylesheets[all][] = system.theme.css
+stylesheets[all][] = system.base.css
+stylesheets[all][] = field.css
+stylesheets[all][] = node.css
+stylesheets[all][] = user.css
+stylesheets[all][] = ctools.css
+stylesheets[all][] = views.css
+
+; REGIONS
+
+regions[page_top] = Page Top
+regions[header] = Header
+regions[sidebar] = Sidebar
+regions[content] = Content
+regions[footer] = Footer
+regions[page_bottom] = Page Bottom
+
+; FEATURES
+
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = search
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+; Compass Support
+; http://drupal.org/project/compass
+compass[status] = 1
+compass[sass_dir] = sass
+compass[css_dir] = css
+
+; Breakpoints
+breakpoints[wide] = (min-width: 1400px)
+breakpoints[desktop] = (min-width: 1200px)
+breakpoints[tablet] = (min-width: 720px)
+breakpoints[mobile] = (min-width: 0px)
+
+; SETTINGS
+
+settings[basic_tabs] = 1
+settings[basic_breadcrumb_separator] = »
+settings[wireframe_mode] = 0
+settings[clear_registry] = 0

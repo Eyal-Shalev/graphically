@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="//www.phically.com/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>http://www.phically.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://www.phically.com/contact</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/levinsky-college</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/pet-spa</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/architecture</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/just-taste</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/language-services</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/dhl</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/ips</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/leather-goods</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/vista-landscape</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/home-page</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+<url><loc>http://www.phically.com/project/ub-landscape-design</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/food-industries-tibulim-ram</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/psychology</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/hebrew%C2%A0university</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/assayag-consultants</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/water-sewer</loc><priority>0.8</priority></url>
+<url><loc>http://www.phically.com/project/levinsky-college</loc><lastmod>2015-08-22T16:11Z</lastmod><changefreq>never</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/pet-spa</loc><lastmod>2015-08-26T23:41Z</lastmod><changefreq>never</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/architecture</loc><lastmod>2015-08-26T23:42Z</lastmod><changefreq>never</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/just-taste</loc><lastmod>2016-01-07T20:42Z</lastmod><changefreq>never</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/language-services</loc><lastmod>2015-08-27T07:00Z</lastmod><changefreq>never</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/dhl</loc><lastmod>2016-02-04T00:52Z</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/ips</loc><lastmod>2016-02-04T02:11Z</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/leather-goods</loc><lastmod>2016-02-04T03:47Z</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/vista-landscape</loc><lastmod>2016-02-04T05:30Z</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/home-page</loc><lastmod>2016-02-04T16:43Z</lastmod><changefreq>yearly</changefreq><priority>1.0</priority></url>
+<url><loc>http://www.phically.com/project/ub-landscape-design</loc><lastmod>2016-02-04T06:53Z</lastmod><changefreq>yearly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/food-industries-tibulim-ram</loc><lastmod>2014-08-07T00:03Z</lastmod><changefreq>never</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/psychology</loc><lastmod>2018-01-11T18:02Z</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/hebrew%C2%A0university</loc><lastmod>2014-08-04T19:35Z</lastmod><changefreq>never</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/node/6</loc><lastmod>2014-12-02T12:07Z</lastmod><changefreq>never</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/assayag-consultants</loc><lastmod>2014-12-02T12:08Z</lastmod><changefreq>never</changefreq><priority>0.9</priority></url>
+<url><loc>http://www.phically.com/project/water-sewer</loc><lastmod>2015-07-23T21:23Z</lastmod><changefreq>never</changefreq><priority>0.9</priority></url>
+</urlset>

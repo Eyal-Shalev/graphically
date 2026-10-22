@@ -1,0 +1,30 @@
+body.page-node-2 {
+  .field-name-body {
+  }
+  .field-name-field-pr-tabs-view .views-row {
+    .tab-id {
+      display: none;
+    }
+    .name:before {
+      content: '';
+      display: none;
+    }
+    .views-field a {
+      width: auto !important;
+    }
+  }
+
+  @include grid-breakpoint(mobile) {
+    .views-row .field-collection-item-field-pr-tab-col-media picture {
+      img, source {
+        max-width: 100%;
+      }
+    }
+  }
+
+  @include each-grid($exclude: mobile) {
+    #node-9, #node-10 {
+      display: none;
+    }
+  }
+} 

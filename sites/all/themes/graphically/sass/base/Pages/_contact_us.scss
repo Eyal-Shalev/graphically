@@ -1,0 +1,17 @@
+body.page-node-10 article {
+  .field-name-body {
+  }
+
+  @include clearfix;
+  .field-name-body {
+    @include gutter
+  }
+  @include each-grid($exclude: mobile) {
+    .field-name-field-sp-content {
+      @include span(first 5 of 10 static);
+    }
+    .contact-form {
+      @include span(1 of 2 fluid no-gutter);
+    }
+  }
+} 
