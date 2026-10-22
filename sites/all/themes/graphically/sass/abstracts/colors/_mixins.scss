@@ -1,9 +1,0 @@
-/* MIXINS */
-
-@mixin color($color, $opacity: 1, $lighten: 0) {
-  color: color($color, $opacity, $lighten);
-}
-
-@mixin bg-color($color, $opacity: 1, $lighten: 0) {
-  background-color: color($color, $opacity, $lighten);
-}

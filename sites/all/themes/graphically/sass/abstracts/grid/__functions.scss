@@ -1,9 +1,0 @@
-/* FUNCTIONS */
-
-@function grid-get-base-font($layout: $current-grid-layout) {
-  @return map-get($layout, base-font-size) + 0px;
-}
-
-@function anti-span($span, $full: 99%) {
-  @return calc(#{$full} - #{span($span)});
-}
